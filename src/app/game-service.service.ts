@@ -11,24 +11,9 @@ export class GameServiceService {
 
   constructor(private http: HttpClient) {}
 
-  getGames(filters: any, page: number = 1, pageSize: number = 10): Observable<any> {
-    let params = new HttpParams()
-      .set('pagination[page]', page.toString())
-      .set('pagination[pageSize]', pageSize.toString());
-
-    if (filters.name) {
-      params = params.set('filters[name][$containsi]', filters.name);
-    }
-
-    if (filters.score) {
-      params = params.set('filters[rating][$gte]', filters.score);
-    }
-
-    // You can implement sorting if needed
-    if (filters.orderBy) {
-      params = params.set('sort', `${filters.orderBy}:desc`);
-    }
-
-    return this.http.get(this.baseUrl, { params });
+  getGames(params: any): Observable<any> {
+    return this.http.get('https://spa.api.logicloop.io/api/games', { params });
+    console.log(params ,"-------params")
   }
+  
 }
