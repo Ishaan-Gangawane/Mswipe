@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GameServiceService } from 'src/app/game-service.service';
 
 @Component({
@@ -7,7 +7,8 @@ import { GameServiceService } from 'src/app/game-service.service';
   styleUrls: ['./game-card.component.scss']
 })
 export class GameCardComponent  implements OnInit{
-  games: any[] = [];
+  @Input() games: any[] = [];
+  // games: any[] = [];
   expandedCardIds: Set<number> = new Set();
   filters = { name: '', score: '', orderBy: '' };
 
@@ -23,10 +24,41 @@ export class GameCardComponent  implements OnInit{
   }
 
   fetchGames(): void {
-    this.gameService.getGames(this.filters, 1, 10).subscribe((res) => {
+    const params: any = {
+      'pagination[page]': 1,
+      'pagination[pageSize]': 10,
+    };
+  
+    if (this.filters.name) {
+      params['filters[name][$containsi]'] = this.filters.name;
+    }
+  
+    if (this.filters.score) {
+      params['filters[rating][$gte]'] = this.filters.score;
+    }
+  
+    if (this.filters.orderBy) {
+      params['sort'] = `${this.filters.orderBy}:asc`;
+    }
+  
+    this.gameService.getGames(params).subscribe((res) => {
       this.games = res.data;
     });
   }
+
+  applyFilters(): void {
+    this.fetchGames();
+  }
+
+  clearFilters(): void {
+    this.filters = {
+      name: '',
+      score: '',
+      orderBy: ''
+    };
+    this.fetchGames();
+  }
+  
 
   formatDate(ms: number | string): string {
     const date = new Date(Number(ms));

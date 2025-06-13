@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class VideoGamesComponent {
   filters: any = {};
 
-  onFiltersChanged(filters: any) {
-    this.filters = filters;
+  onFiltersApplied(filters: any): void {
+    console.log('Filters received in parent:', filters); // ✅ Debug
+    this.filters = { ...filters };
   }
+
+  onFiltersCleared(): void {
+    this.filters = {};
+  }
+  
 
 }
