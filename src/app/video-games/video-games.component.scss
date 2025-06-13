@@ -1,0 +1,26 @@
+.page-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+  
+    .filters {
+      flex: 0 0 250px;
+    }
+  
+    .game-list {
+      flex: 1;
+    }
+  }
+  
+  // Tablet view
+  @media screen and (max-width: 992px) {
+    .page-wrapper {
+      flex-direction: column;
+  
+      .filters,
+      .game-list {
+        width: 100%;
+      }
+    }
+  }
+  

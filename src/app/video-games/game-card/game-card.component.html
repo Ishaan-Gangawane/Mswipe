@@ -1,0 +1,17 @@
+<ng-container *ngFor="let game of games">
+  <mat-card class="game-card">
+    <div class="game-content">
+      <div class="game-thumbnail"></div>
+
+      <div class="game-info">
+        <h3>{{ game.attributes.name }}</h3>
+        <p>Release Date: {{ game.attributes.createdAt | date: 'dd/MM/yyyy ' }}</p>
+        <p class="desc">{{ game.attributes.summary }}</p>
+      </div>
+
+      <div class="score-circle">
+        {{ getRatingDigit(game.attributes.rating) }}
+      </div>
+    </div>
+  </mat-card>
+</ng-container>

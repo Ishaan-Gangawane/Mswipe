@@ -1,0 +1,31 @@
+<mat-card>
+  <div class="p-10 filter-background">
+  <h3 class="txt-color">Filter Results</h3>
+
+  <mat-label class="txt-color">Name (contains)</mat-label>
+  <mat-form-field appearance="fill" class="full-width custom-color">
+    
+    <input matInput  />
+  </mat-form-field>
+
+  <mat-label class="txt-color">Minimum Score</mat-label>
+  <mat-form-field appearance="fill" class="full-width custom-color">
+    
+    <input matInput type="number" min="1" max="10" />
+  </mat-form-field>
+
+  <mat-label class="txt-color">Order By</mat-label>
+  <mat-form-field appearance="fill" class="full-width custom-color">
+    
+    <mat-select>
+      <mat-option value="releaseDate">Release Date</mat-option>
+      <mat-option value="score">Score</mat-option>
+      <mat-option value="name">Name</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+  <div class="clear-btn-align justify-content-end d-flex" >
+    <button mat-stroked-button color="primary">Clear</button>
+  </div>
+</mat-card>

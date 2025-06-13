@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+.page-container {
+    display: flex;
+    height: 100vh !important;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding: 16px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 16px;
+  }
+  
+  .game-card {
+    margin-bottom: 16px;
+  }
+  
+  .game-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .game-thumbnail {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    margin-right: 16px;
+  }
+  
+  .score-circle {
+    margin-left: auto;
+    background: #1e88e5;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  body{
+    background: #081221 !important;
+  }
+  
+
+  ::ng-deep .custom-color.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #182c47;
+    color: white;
+  }
+  
+  ::ng-deep .custom-color input,
+  ::ng-deep .custom-color .mat-select-value {
+    color: white;
+  }
+  
+  ::ng-deep .custom-color .mat-form-field-label {
+    color: white;
+  }
+  
+  ::ng-deep .custom-color .mat-select-arrow {
+    color: white;
+  }
+
+  .p-10{
+    padding: 10px;
+  }
+
+  .txt-color{
+    color: #fff !important;
+  }
+
+  .filter-background{
+    background: #0e192b !important;
+  }
+
+  .clear-btn-align{
+    background: #0e192b;
+  }
+
+  .d-flex{
+    display: flex;
+  }
+
+  .justify-content-end{
+    justify-content: end;
+  }
+
+  
+  

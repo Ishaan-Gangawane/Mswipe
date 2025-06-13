@@ -1,0 +1,35 @@
+.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background: #182c47 !important;
+    color: #fff !important;
+  }
+
+  ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label{
+    color: #fff !important;
+  }
+
+  ::ng-deep .mdc-menu-surface.mat-mdc-select-panel {
+    background: #182c47 !important;
+   
+  }
+
+  ::ng-deep .mdc-list-item__primary-text {
+    color: #fff  !important;
+  }
+
+  ::ng-deep .mat-mdc-select-value  {
+    color: #fff  !important;
+  }
+
+  ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input  {
+    color: #fff  !important;
+  }
+  
+  ::ng-deep .mat-mdc-outlined-button:not(:disabled){
+    background: #5692e8 !important;
+    color: #fff !important;
+  }
