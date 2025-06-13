@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './video-games/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -7,10 +8,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./video-games/video-games.module').then((m) => m.VideoGamesModule),
   },
-  // {
-  //   path: 'contact',
-  //   component: ContactComponent, // You must create this component
-  // },
+  {
+    path: 'contact',
+    component: ContactComponent, // You must create this component
+  },
   {
     path: '',
     redirectTo: 'video-games',
